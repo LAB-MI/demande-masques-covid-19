@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="msapplication-TileColor" content="#603cba" />
+        <meta
+            name="msapplication-config"
+            content="./favicons/browserconfig.xml"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <meta
+            name="title"
+            content="Générateur de bon de perception de masques grand public - COVID-19"
+        />
+        <meta
+            name="description"
+            content="Ce service officiel génère un bon de perception permettant de demander des masques grand public distribués par l'Etat."
+        />
+        <meta
+            name="keywords"
+            content="covid19, covid-19, masques, grand public, bon, déconfinement, officiel, gouvernement"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="French" />
+        <meta
+            property="og:title"
+            content="Générateur de bon de perception de masques grand public - COVID-19"
+        />
+        <meta property="og:locale" content="fr_FR" />
+        <meta
+            property="og:description"
+            content="Ce service officiel génère un bon de perception permettant de demander des masques grand public distribués par l'Etat."
+        />
+        <link
+            rel="canonical"
+            href="https://distribution-masques-covid-19.interieur.gouv.fr/"
+        />
+        <meta
+            property="og:url"
+            content="https://distribution-masques-covid-19.interieur.gouv.fr/"
+        />
+        <meta
+            property="og:site_name"
+            content="Générateur de bon de perception de masques grand public - COVID-19"
+        />
+        <script type="application/ld+json">
+            {
+                "@context": "http://www.schema.org",
+                "@type": "GovernmentOrganization",
+                "name": "Générateur de bon de perception de masques grand public - COVID-19",
+                "description": "Ce service officiel génère un bon de perception permettant de demander des masques grand public distribués par l'Etat.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "France"
+                }
+            }
+        </script>
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./favicons/favicon-16x16.png"
+        />
+        <link
+            crossorigin="use-credentials"
+            rel="manifest"
+            href="site.webmanifest"
+        />
+        <link
+            rel="mask-icon"
+            href="./favicons/safari-pinned-tab.svg"
+            color="#21bf73"
+        />
+        <link rel="stylesheet" href="./css/bon-perception.css" />
+
+        <title>
+            COVID-19 – Générateur de bon de perception de masques
+        </title>
+    </head>
+    <body>
+        <div id="alerte-facebook" class="alerte alerte--danger">
+            <p>
+                Attention, vous utilisez actuellement le navigateur Facebook et
+                ce générateur ne fonctionne pas correctement dessus ! Veuillez
+                utiliser un des navigateurs suivants : Chrome sur Android ou
+                Safari sur iOS.
+            </p>
+        </div>
+
+        <div id="alerte-ie" class="alerte alerte--danger">
+            <p>
+                Ce site n'est pas compatible avec votre navigateur. Veuillez
+                utiliser un des navigateurs suivants, mis à jour : Chrome,
+                Firefox, Safari ou Edge.
+            </p>
+        </div>
+
+        <header role="banner" class="header">
+            <a href="/">
+                <img
+                    src="./img/MIN_Interieur_RVB.svg"
+                    alt="Ministère de l'intérieur. Liberté, égalité, fraternité."
+                />
+            </a>
+
+            <h1 class="heading1">
+                <span>
+                    COVID-19
+                </span>
+                <span>Bon de perception de masques</span>
+            </h1>
+
+            <p>
+                Lors de la lecture de ce bon de perception par les autorités
+                désignées, le ministère de l’intérieur procède à un traitement
+                de vos données à caractère personnel afin de faciliter la
+                distribution de masques et d’en assurer le suivi.
+            </p>
+            <p>
+                Pour en savoir plus sur la gestion de vos données et pour
+                exercer vos droits, reportez-vous à la notice jointe à
+                l’application de génération du bon de perception ainsi qu’à
+                [l’arrêté du XXX portant création d’un traitement automatisé de
+                données à caractère personnel relatif à la distribution de
+                masques destinés au grand public dans le cadre de l’épidémie de
+                covid-19].
+            </p>
+        </header>
+
+        <main role="main">
+            <form class="formulaire-bon-perception" accept-charset="UTF-8">
+                <h2 class="heading2">
+                    Remplissez en ligne votre bon de perception de masques
+                </h2>
+
+                <p>
+                    <strong>
+                        Un bon de perception est nécessaire pour chaque personne
+                        majeure. <br />
+                        Conservez ce bon pour toutes vos demandes de masques
+                        jusqu'à la fin de la crise sanitaire.
+                    </strong>
+                </p>
+
+                <div class="faq">
+                    <a
+                        href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Bon-de-perception-de-masques-grands-publics"
+                        target="_blank"
+                        title="FAQ - nouvelle page"
+                    >
+                        <img src="./img/info.svg" alt="Information" />
+                        <strong>Vous avez des questions ?</strong>
+                        <span>Consultez la FAQ →</span>
+                    </a>
+                </div>
+
+                <h3 class="heading3">
+                    Saisissez vos informations
+                </h3>
+
+                <p class="formulaire-consignes">
+                    Tous les champs sont obligatoires.
+                </p>
+
+                <div class="input-group">
+                    <label
+                        id="champ-demandeur-prenom-label"
+                        for="champ-demandeur-prenom"
+                        >Prénom</label
+                    >
+
+                    <input
+                        type="text"
+                        id="champ-demandeur-prenom"
+                        name="prenom"
+                        aria-labelledby="champ-demandeur-prenom-label"
+                        autocomplete="given-name"
+                        placeholder="Jean"
+                        required
+                        autofocus
+                        aria-invalid="true"
+                    />
+
+                    <span class="validity" aria-hidden="true"></span>
+
+                    <p class="exemple"></p>
+                </div>
+
+                <div class="input-group">
+                    <label
+                        id="champ-demandeur-nom-label"
+                        for="champ-demandeur-nom"
+                        >Nom</label
+                    >
+                    <input
+                        type="text"
+                        id="champ-demandeur-nom"
+                        name="nom"
+                        aria-labelledby="champ-demandeur-nom-label"
+                        autocomplete="family-name"
+                        placeholder="Dupont"
+                        aria-invalid="true"
+                        required
+                    />
+
+                    <span class="validity" aria-hidden="true"></span>
+
+                    <p class="exemple"></p>
+                </div>
+
+                <div class="input-group">
+                    <label
+                        id="champ-demandeur-date-naissance-label"
+                        for="champ-demandeur-date-naissance"
+                        >Date de naissance (au format jj/mm/aaaa)</label
+                    >
+                    <input
+                        type="text"
+                        pattern="^([0][1-9]|[1-2][0-9]|30|31)\/([0][1-9]|10|11|12)\/(19[0-9][0-9]|20[0-1][0-9]|2020)"
+                        inputmode="numeric"
+                        id="champ-demandeur-date-naissance"
+                        name="date-naissance"
+                        aria-labelledby="champ-demandeur-date-naissance-label"
+                        aria-invalid="true"
+                        autocomplete="bday"
+                        placeholder="01/01/1970"
+                        maxlength="10"
+                        required
+                    />
+
+                    <span class="validity" aria-hidden="true"></span>
+
+                    <p class="exemple"></p>
+                </div>
+
+                <div class="input-group">
+                    <label
+                        id="champ-demandeur-lieu-naissance-label"
+                        for="champ-demandeur-lieu-naissance"
+                        >Lieu de naissance</label
+                    >
+
+                    <input
+                        type="text"
+                        id="champ-demandeur-lieu-naissance"
+                        name="lieu-naissance"
+                        aria-labelledby="champ-demandeur-lieu-naissance-label"
+                        aria-invalid="true"
+                        placeholder="Lyon"
+                        required
+                    />
+
+                    <span class="validity" aria-hidden="true"></span>
+
+                    <p class="exemple"></p>
+                </div>
+
+                <div class="input-group">
+                    <label
+                        id="champ-nombre-mineurs-label"
+                        for="champ-nombre-mineurs"
+                        >Nombre de mineurs pour lesquels je veux également
+                        récupérer des masques</label
+                    >
+
+                    <input
+                        type="number"
+                        id="champ-nombre-mineurs"
+                        name="nombre-personnes"
+                        aria-labelledby="champ-nombre-mineurs-label"
+                        aria-invalid="false"
+                        placeholder="1"
+                        value="0"
+                        min="0"
+                        required
+                    />
+
+                    <span class="validity" aria-hidden="true"></span>
+
+                    <p class="exemple"></p>
+                </div>
+
+                <div
+                    role="group"
+                    class="radio-group"
+                    aria-labelledby="champ-capacité-label"
+                >
+                    <p id="champ-capacité-label">
+                        Êtes-vous en capacité de récupérer vous-même ces masques
+                        ?
+                    </p>
+
+                    <label
+                        id="champ-capacité-oui-label"
+                        for="champ-capacité-oui"
+                    >
+                        <input
+                            type="radio"
+                            id="champ-capacité-oui"
+                            name="capacité"
+                            aria-labelledby="champ-capacité-oui-label"
+                            value="true"
+                            checked
+                        />
+
+                        <span>Oui</span>
+                    </label>
+
+                    <label
+                        id="champ-capacité-non-label"
+                        for="champ-capacité-non"
+                    >
+                        <input
+                            type="radio"
+                            id="champ-capacité-non"
+                            name="capacité"
+                            aria-labelledby="champ-capacité-non-label"
+                            value="false"
+                        />
+
+                        <span
+                            >Non, je mandate une personne pour récupérer ces
+                            masques.
+                        </span>
+                    </label>
+                </div>
+
+                <div class="formulaire-personne-mandatée">
+                    <h3 class="heading3">
+                        Saisissez les informations de la personne mandatée
+                    </h3>
+
+                    <p class="formulaire-consignes">
+                        Tous les champs sont obligatoires.
+                    </p>
+
+                    <div class="input-group">
+                        <label
+                            id="champ-mandatée-prenom-label"
+                            for="champ-mandatée-prenom"
+                            >Prénom</label
+                        >
+
+                        <input
+                            type="text"
+                            id="champ-mandatée-prenom"
+                            name="prenom"
+                            aria-labelledby="champ-mandatée-prenom-label"
+                            autocomplete="given-name"
+                            placeholder="Jean"
+                            autofocus
+                            aria-invalid="false"
+                        />
+
+                        <span class="validity" aria-hidden="true"></span>
+
+                        <p class="exemple"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label
+                            id="champ-mandatée-nom-label"
+                            for="champ-mandatée-nom"
+                            >Nom</label
+                        >
+                        <input
+                            type="text"
+                            id="champ-mandatée-nom"
+                            name="nom"
+                            aria-labelledby="champ-mandatée-nom-label"
+                            autocomplete="family-name"
+                            placeholder="Dupont"
+                            aria-invalid="false"
+                        />
+
+                        <span class="validity" aria-hidden="true"></span>
+
+                        <p class="exemple"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label
+                            id="champ-mandatée-date-naissance-label"
+                            for="champ-mandatée-date-naissance"
+                            >Date de naissance (au format jj/mm/aaaa)</label
+                        >
+                        <input
+                            type="text"
+                            pattern="^([0][1-9]|[1-2][0-9]|30|31)\/([0][1-9]|10|11|12)\/(19[0-9][0-9]|20[0-1][0-9]|2020)"
+                            inputmode="numeric"
+                            id="champ-mandatée-date-naissance"
+                            name="date-naissance"
+                            aria-labelledby="champ-mandatée-date-naissance-label"
+                            aria-invalid="false"
+                            autocomplete="bday"
+                            placeholder="01/01/1970"
+                            maxlength="10"
+                        />
+
+                        <span class="validity" aria-hidden="true"></span>
+
+                        <p class="exemple"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label
+                            id="champ-mandatée-lieu-naissance-label"
+                            for="champ-mandatée-lieu-naissance"
+                            >Lieu de naissance</label
+                        >
+
+                        <input
+                            type="text"
+                            id="champ-mandatée-lieu-naissance"
+                            name="lieu-naissance"
+                            aria-labelledby="champ-mandatée-lieu-naissance-label"
+                            aria-invalid="false"
+                            placeholder="Lyon"
+                        />
+
+                        <span class="validity" aria-hidden="true"></span>
+
+                        <p class="exemple"></p>
+                    </div>
+                </div>
+
+                <ul class="formulaire-consignes-retrait">
+                    <li>
+                        Des pièces justificatives permettant de vérifier
+                        l’identité des personnes ci-dessus doivent être
+                        présentées lors de la récupération des masques.
+                    </li>
+                    <li>
+                        Une pièce justificative du mandaté sera également
+                        demandée.
+                    </li>
+                </ul>
+
+                <button type="submit">
+                    <span>
+                        <img src="./img/icone_pdf.svg" alt="Icône PDF" />
+                        <span>Générer mon bon de perception</span>
+                    </span>
+                </button>
+            </form>
+
+            <div
+                id="message-confirmation"
+                class="alerte alerte--bottom alerte--info"
+                aria-hidden="true"
+            >
+                <p>L'attestation est téléchargée sur votre appareil.</p>
+            </div>
+
+            <div class="ministere-interieur">
+                <p>
+                    Ministère de l'Intérieur - DNUM - SDSI
+                </p>
+
+                <img src="./img/logo_dnum.svg" alt="Logo DNUM" />
+            </div>
+        </main>
+
+        <footer role="contentinfo" class="footer">
+            <a
+                href="./confidentialite.html"
+                title="Confidentialité - nouvelle page"
+                target="_blank"
+                >Confidentialité</a
+            >
+
+            <a
+                href="./conditions-utilisation.html"
+                title="Conditions d'utilisation - nouvelle page"
+                target="_blank"
+                >Conditions d'utilisation</a
+            >
+
+            <a
+                href="./mentions-legales.html"
+                title="Mentions légales - nouvelle page"
+                target="_blank"
+                >Mentions légales</a
+            >
+
+            <a
+                href="https://www.gouvernement.fr/info-coronavirus"
+                title="Information du gouvernement sur le Covid-19 - nouvelle page"
+                target="_blank"
+                >Informations du gouvernement sur le Covid-19</a
+            >
+
+            <p>
+                Plus d’infos au
+                <a href="tel:0800130000">0 800 130 000</a>
+            </p>
+        </footer>
+
+        <div
+            id="message-mise-a-jour"
+            class="alerte alerte--bottom alerte--info"
+            aria-hidden="true"
+        >
+            <p>
+                Une nouvelle version est disponible. Cliquez sur le bouton pour
+                l'obtenir.
+            </p>
+
+            <button type="button">Mettre à jour</button>
+        </div>
+
+        <script src="./js/bon-perception.js"></script>
+
+        <!-- Analytics & Cookies Consent -->
+        <script src="https://tag.aticdn.net/445732/smarttag.js"></script>
+        <script src="./js/at-internet-et-consentement.js"></script>
+    </body>
+</html>

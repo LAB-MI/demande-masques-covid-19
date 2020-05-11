@@ -1,0 +1,94 @@
+{
+  "name": "demande-masques-covid-19",
+  "version": "0.0.1",
+  "description": "Générateur de bons de perceptions de masques",
+  "scripts": {
+    "start": "cross-env VERSION=1.0.0 parcel --public-url / ./src/index.html",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build --public-url / ./src/index.html ./src/robots.txt ./src/sitemap.xml",
+    "postbuild": "rm -rf node_modules",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .js --ignore-path .gitignore .",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:browser": "cypress run",
+    "test:browser:open": "cypress open",
+    "test:browser:verify": "cypress verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:dmgp/demande-masques-covid-19.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/dmgp/demande-masques-covid-19/-/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.4.0",
+    "cross-env": "^7.0.2",
+    "cypress": "^4.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "10.1.6",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-sw-cache": "0.3.1",
+    "postcss-current-selector": "0.0.3",
+    "postcss-nested": "^4.2.1",
+    "postcss-nested-ancestors": "^2.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "2.0.4",
+    "serve": "^11.3.0"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.9.0",
+    "cookieconsent": "3",
+    "core-js": "^3.6.5",
+    "date-fns": "^2.12.0",
+    "pdf-lib": "^1.4.1",
+    "qrcode": "^1.4.4",
+    "reset.css": "^2.0.2"
+  },
+  "browserslist": [
+    ">= 0.02% in FR",
+    "not ie < 9"
+  ],
+  "cache": {
+    "globPatterns": [
+      "*.{js,css,jpg,png,pdf,svg,eot,ttf,woff,woff2}",
+      "index.html"
+    ],
+    "navigateFallbackWhitelist": [],
+    "disablePlugin": false,
+    "inDev": false,
+    "strategy": "default",
+    "clearDist": true,
+    "templatedURLs": {
+      "/": [
+        "index.html"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|html|css)": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.js": "eslint --cache --fix"
+  }
+}

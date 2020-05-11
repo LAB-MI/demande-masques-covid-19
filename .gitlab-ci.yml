@@ -1,0 +1,70 @@
+---
+
+stages:
+  - test
+  - deploy
+
+Tests:
+  # https://github.com/cypress-io/cypress-docker-images/tree/master/browsers
+  image: cypress/browsers:node12.8.1-chrome80-ff72
+  stage: test
+  tags:
+    - dmgp
+  script:
+    - yarn install
+    # Lancement des test unitaires
+    - yarn test
+    # Tests de navigateur
+    # vérification de l'installation Cypress
+    - yarn test:browser:verify
+    # démarrage du serveur
+    - PUBLIC_URL=/demande-masques-covid-19 yarn start &
+    # lancement des tests de navigateur
+    - yarn test:browser --browser chrome
+    - yarn test:browser --browser firefox
+
+.deploy:
+  stage: deploy
+  image:
+    name: alpine/git
+    entrypoint: [""]
+  environment:
+    name: $env_name
+    url: https://demandeur-${env_name}.osc-fr1.scalingo.io/
+  resource_group: $env_name
+  tags:
+    - dmgp
+  before_script:
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan ssh.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
+    - git remote add scalingo git@ssh.osc-fr1.scalingo.com:demandeur-${env_name}.git ||
+        git remote set-url scalingo git@ssh.osc-fr1.scalingo.com:demandeur-${env_name}.git
+    - git remote show -n scalingo
+  when: manual
+
+DeployToDev:
+  extends: .deploy
+  variables:
+    env_name: dev
+  script:
+    - git push scalingo HEAD:refs/heads/master -f
+
+DeployToRecette:
+  extends: .deploy
+  variables:
+    env_name: recette
+  script:
+    - git push scalingo HEAD:refs/heads/master -f
+
+DeployToProd:
+  extends: .deploy
+  variables:
+    env_name: prod
+  script:
+    - git push scalingo HEAD:refs/heads/master
+  only:
+    refs:
+      - master

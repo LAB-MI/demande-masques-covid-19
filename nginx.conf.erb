@@ -1,0 +1,14 @@
+
+add_header X-XSS-Protection "1; mode=block";
+add_header Content-Security-Policy "frame-ancestors 'none';default-src 'none'; img-src 'self' 'https://*.xiti.com/'; script-src 'self' https://tag.aticdn.net https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; font-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self';  form-action 'self'; connect-src 'self'";
+add_header X-Frame-Options "DENY";
+add_header X-Content-Type-Options "nosniff";
+add_header Referrer-Policy "strict-origin";
+add_header Feature-Policy "camera 'none'; geolocation 'none'; midi 'none'; notifications 'none'; magnetometer 'none'; gyroscope 'none'; vibrate 'none'; payment 'none';";
+add_header Cache-Control "public, max-age=60, must-revalidate";
+<% if ENV['BASIC_AUTH'] %>
+auth_basic           "Restricted Area";
+auth_basic_user_file .htpasswd;
+<% end %>
+root /app/dist;
+index index.html;

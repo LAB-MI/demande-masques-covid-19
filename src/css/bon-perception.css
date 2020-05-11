@@ -1,0 +1,144 @@
+@import "reset.css/reset.css";
+@import "./main.css";
+
+.formulaire-bon-perception {
+  padding: 0 2rem;
+}
+
+.formulaire-bon-perception .input-group,
+.formulaire-bon-perception .radio-group {
+  max-width: 400px;
+}
+
+.formulaire-bon-perception button {
+  max-width: 280px;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: left;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}
+
+.formulaire-bon-perception button img {
+  display: block;
+  width: 100%;
+}
+
+.formulaire-bon-perception button > span {
+  display: grid;
+  align-items: center;
+  grid-gap: 2rem;
+  grid-template-columns: 2rem 1fr;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formulaire-personne-mandatée {
+  display: none;
+}
+
+.formulaire-personne-mandatée--visible {
+  display: block;
+}
+
+.formulaire-consignes {
+  margin-bottom: 1.6rem;
+}
+
+.formulaire-consignes-retrait {
+  background: rgba(0, 1, 145, 0.2);
+  margin: 4rem 0;
+  padding: 2rem;
+}
+
+.formulaire-consignes-retrait--personne-mandatee {
+  padding-left: 4rem;
+}
+
+.formulaire-consignes-retrait--personne-mandatee li {
+  list-style: disc;
+}
+
+.formulaire-consignes-retrait li + li {
+  margin-top: 1rem;
+}
+
+.formulaire-consignes-retrait li:nth-child(2) {
+  display: none;
+}
+
+.formulaire-consignes-retrait--personne-mandatee li:nth-child(2) {
+  display: list-item;
+}
+
+.faq {
+  margin: 2rem 0;
+}
+
+.faq a {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  align-items: center;
+  padding: 1.6rem 2rem;
+
+  background: rgba(0, 1, 145, 0.2);
+  color: #000191;
+  text-decoration: none;
+}
+
+.faq img {
+  grid-row: 1 / span 2;
+}
+
+@media (min-width: 800px) {
+  .faq a {
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+  }
+
+  .faq img {
+    grid-row: 1;
+  }
+}
+
+#message-mise-a-jour,
+#message-confirmation {
+  display: block;
+  transition: opacity 0.25s;
+  width: 100%;
+  max-width: 500px;
+}
+
+#message-mise-a-jour[aria-hidden="true"],
+#message-confirmation[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#message-mise-a-jour[aria-hidden="false"],
+#message-confirmation[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#message-mise-a-jour {
+  display: grid;
+  grid-gap: 0.5rem;
+  text-align: left;
+  grid-template-columns: repeat(2, auto);
+}
+
+#message-mise-a-jour p {
+  grid-column: 1 / span 2;
+}
+
+#message-mise-a-jour button {
+  grid-column: 2;
+  font-size: 1.3rem;
+}

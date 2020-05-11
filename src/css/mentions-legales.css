@@ -1,0 +1,10 @@
+@import "reset.css/reset.css";
+@import "./main.css";
+
+main {
+  padding: 0 2rem;
+}
+
+a {
+  word-break: break-word;
+}
