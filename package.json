@@ -51,7 +51,7 @@
     "serve": "^11.3.0"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.9.0",
+    "@babel/runtime-corejs3": "^7.26.10",
     "cookieconsent": "3",
     "core-js": "^3.6.5",
     "date-fns": "^2.12.0",
